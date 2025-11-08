@@ -82,14 +82,13 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>3.2.5</version>
         <configuration>
-          <!-- Ensure it runs your Cucumber TestRunner -->
           <includes>
+            <!-- Make sure this matches your runner class name -->
             <include>**/TestRunnerBackground.java</include>
           </includes>
-
-          <!-- Optional: set system properties if you want -->
           <systemPropertyVariables>
-            <allure.results.directory>allure-results</allure.results.directory>
+            <!-- Allure output folder -->
+            <allure.results.directory>${project.basedir}/allure-results</allure.results.directory>
           </systemPropertyVariables>
         </configuration>
       </plugin>
